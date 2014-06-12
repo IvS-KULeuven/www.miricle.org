@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-US">
+ <head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Miricle</title>
+  <link rel="stylesheet" href="styles/reset.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="styles/style.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="lightbox/css/lightbox.css" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans|Baumans' rel='stylesheet' type='text/css'>
+
+  <script src="js/modernizr.js"></script>
+  <script src="js/respond.min.js"></script>
+
+  <!-- include extern jQuery file but fall back to local file if extern one fails to load !-->
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="js\/1.7.2.jquery.min"><\/script>')</script>
+        
+  <script src="lightbox/js/lightbox.js"></script>
+  <script src="js/prefixfree.min.js"></script>
+  <script src="js/jquery.slides.min.js"></script>
+
+  <script>
+   $(function() {
+     $('#slides').slidesjs({       
+       width: 800,
+       height: 235,
+       navigation: false,
+       pagination: false,
+       effect: {
+         fade: {
+           speed: 400
+         }
+       },
+       callback: {
+         start: function(number)
+         {                       
+           $("#slider_content1,#slider_content2").fadeOut(500);
+         },
+         complete: function(number)
+         {                       
+           $("#slider_content" + number).delay(500).fadeIn(1000);
+         }               
+       },
+       play: {
+         active: false,
+         auto: true,
+         interval: 10000,
+         pauseOnHover: false
+       }
+     });
+   });
+  </script>
+
+ </head>
+ <body>
+  <header>
+   <h1>Miricle</h1>
+   <p>MIRI Data Analysis</p>
+
+   <select id="alternative_menu" size="1">
+     <option value="http://miri.ster.kuleuven.be/bin/view/Internal/MiricleSoftwareSystem">Install</a></option>
+     <option value="http://www.miricle.org/jenkins/">Builds</a></option>
+     <option value="https://aeon.stsci.edu/ssb/svn/jwst/">Code</option>
+     <option value="https://aeon.stsci.edu/ssb/trac/jwst/report/1">Bugs</option>
+   </select>
+
+   <script>
+    $("#alternative_menu").change(function () {
+              var selctedValue = "";
+              $("select option:selected").each(function () {
+                    selctedValue += $(this).val();
+window.location.href = selctedValue;
+
+    });
+    });
+   </script>
+
+   <nav>
+    <h2 class="hidden">Navigation</h2>
+    <ul>
+     <li><a href="http://miri.ster.kuleuven.be/bin/view/Internal/MiricleSoftwareSystem">Install</a></li>
+     <li><a href="http://www.miricle.org/jenkins/">Builds</a></li>
+     <li><a href="https://aeon.stsci.edu/ssb/svn/jwst/">Code</a></li>
+     <li><a href="https://aeon.stsci.edu/ssb/trac/jwst/report/1">Bugs</a></li>
+    </ul>
+   </nav>
+  </header>
+
+  <section class="container">
+   <h2 class="hidden">Links to pages</h2>
+   <article id="slider_content1">
+    <h3>MIRICLE</h3>
+    <p>MIRICLE is software for the MIRI test team. The aim of MIRICLE is to provide an easy to install and easy to use python environment with everything needed to investigate the test results of MIRI.</p>
+    <a class="button" href="http://miri.ster.kuleuven.be/bin/view/Internal/MiricleSoftwareSystem">Read more</a>
+   </article>
+   <article id="slider_content2">
+    <h3>MIRI</h3>
+    <p>The Mid-Infrared Instrument (MIRI) on JWST will provide direct imaging and medium resolution spectroscopy (R~3000) over the wavelength range 5 - 28.3 micron, coronagraphic imaging at 10.65, 11.4, 15.5 and 23 micron, and low resolution spectroscopy (R~100) over the wavelength range 5 - 10 micron.</p>
+    <a class="button" href="http://www.stsci.edu/jwst/instruments/miri">Read more</a>
+   </article>
+   <div id="slides">
+    <img src="img/miricle.jpg" alt="MIRICLE">
+    <img src="img/jwst.jpg" alt="JWST telescope">
+   </div>
+  </section>
+
+
+  <section id="boxcontent">
+   <h2 class="hidden">Adipiscing</h2>
+   <article>
+    <h3>Version 2.1 of MIRICLE</h3>
+    <p>
+     Version 2.1 of the installation script makes the installation of IRAF optional. Only when installing using the parameter --iraf,
+     IRAF will be installed. You will need 4 gigabyte of disk space during installation, when IRAF is not installed, only 2 gigabyte will remain after the installion.
+    </p>
+   </article>
+   <article>
+    <h3>MIRICLE Website</h3>
+    <p>
+     We created a first version of the MIRICLE website. Check again later for updates.
+    </p>
+   </article>
+   <br class="clear"/>
+  </section>
+
+
+
+  <footer>
+   <h2 class="hidden">Our footer</h2>
+   <section id="copyright">
+    <h3 class="hidden">Copyright notice</h3>
+    <div class="wrapper">
+     &copy; Copyright 2014 by the MIRI Team. All Rights Reserved.
+    </div>
+   </section>
+  </footer>
+ </body>
+</html>
