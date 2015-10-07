@@ -15,14 +15,14 @@
   <!-- include extern jQuery file but fall back to local file if extern one fails to load !-->
   <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
   <script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="js\/1.7.2.jquery.min"><\/script>')</script>
-        
+
   <script src="lightbox/js/lightbox.js"></script>
   <script src="js/prefixfree.min.js"></script>
   <script src="js/jquery.slides.min.js"></script>
 
   <script>
    $(function() {
-     $('#slides').slidesjs({       
+     $('#slides').slidesjs({
        width: 800,
        height: 235,
        navigation: false,
@@ -34,13 +34,13 @@
        },
        callback: {
          start: function(number)
-         {                       
+         {
            $("#slider_content1,#slider_content2").fadeOut(500);
          },
          complete: function(number)
-         {                       
+         {
            $("#slider_content" + number).delay(500).fadeIn(1000);
-         }               
+         }
        },
        play: {
          active: false,
@@ -62,7 +62,7 @@
      <option value="http://miri.ster.kuleuven.be/bin/view/Internal/MiricleSoftwareSystem">Install</a></option>
      <option value="http://www.miricle.org/jenkins/">Builds</a></option>
      <option value="https://aeon.stsci.edu/ssb/svn/jwst/">Code</option>
-     <option value="https://aeon.stsci.edu/ssb/trac/jwst/report/1">Bugs</option>
+     <option value="http://www.miricle.org/bugzilla/">Bugs</option>
      <option value="http://www.miricle.org/CDP/">CDP browser</option>
    </select>
 
@@ -131,6 +131,7 @@ window.location.href = selctedValue;
      For more information on version 1.4 of UREKA, see <a href="http://ssb.stsci.edu/ureka/1.4/">here</a>.
     </p>
    </article>
+   <br />
    <article>
     <h3>Version 2.1 of MIRICLE</h3>
     <p>
